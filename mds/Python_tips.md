@@ -103,6 +103,8 @@
 ## String
 
 1. `"".join(s.split())` can strip all the whitespaces in s.
+2. `''.join(deque([1,2]))` is also legal.
+3. `''.join(st) or '0'` will return '0' if st is empty. `or` will return the second operand is st is False/0/''/[]/...
 
 ## Dict
 
