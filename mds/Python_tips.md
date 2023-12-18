@@ -100,6 +100,17 @@
 
 10. for circular list, just use the `%` to circulate the index.
 
+11. copy
+
+    ```python
+    a = [[1,2],[1],[2]]
+    b = a.copy()
+    c = copy.deepcopy(a)
+    a[0].append(3) # b: [[1,2,3],[1],[2]]; c: [[1,2],[1],[2]]
+    ```
+
+    
+
 ## String
 
 1. `"".join(s.split())` can strip all the whitespaces in s.
