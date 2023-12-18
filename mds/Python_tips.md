@@ -62,7 +62,7 @@
     		return m,n
     ```
 
-    
+13. `zip(a,b)` can pack two iterable objects into tuples: `[(a[0],b[0]),(a[1],b[1]),...]`. If the length of a,b are different, the returned list has the same length with the short one.
 
 ## List
 
