@@ -70,10 +70,12 @@
 
 2. `[-1]*len(nums)` can be used to malloc an array, no need to use `append()` or `insert()`.
 
-4. iterate inversely: `for i in range(r,l,-1)`, l can be -1.
+   However, `[[-1]*n]*m` is not a two-dimensional array, its each row points to the same array `[-1]*n`. Use `[[-1]*n for _ in range(m)]` instead.
+
+3. iterate inversely: `for i in range(r,l,-1)`, l can be -1.
 
    iterate with step size: `for i in range(r,l,step_size)`
-   
+
 4. `append()`: a=[1,2].append([1]) -> a[1,2,[1]]
 
    `extend()`: a=[1,2].extend([1]) -> a[1,2,1]
@@ -100,7 +102,7 @@
 
 10. for circular list, just use the `%` to circulate the index.
 
-11. copy
+11. copy, remember to copy a list when it is **changeable**(pointed by a pointer) and **need to be used elsewhere**.
 
     ```python
     a = [[1,2],[1],[2]]
