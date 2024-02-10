@@ -66,39 +66,45 @@
 
 ## List
 
-1. In python, `while loop` is better to control the pointers' move. 
 
-2. `[-1]*len(nums)` can be used to malloc an array, no need to use `append()` or `insert()`.
+
+1. The list in python is stored in sequence, but **each element(dp[0]) is a pointer** pointed to discrete values.
+
+2. In python, `while loop` is better to control the pointers' move. 
+
+3. `[-1]*len(nums)` can be used to malloc an array, no need to use `append()` or `insert()`.
 
    However, `[[-1]*n]*m` is not a two-dimensional array, its each row points to the same array `[-1]*n`. Use `[[-1]*n for _ in range(m)]` instead.
 
-3. `[None]*n`, the None can be used to judge the initial state.
+   As a two-dimensional array being constructed, we can still initialize the raw as follows: `dp[0] = [1] * n`.
 
-4. iterate inversely: `for i in range(r,l,-1)`, l can be -1.
+4. `[None]*n`, the None can be used to judge the initial state.
+
+5. iterate inversely: `for i in range(r,l,-1)`, l can be -1.
 
    iterate with step size: `for i in range(r,l,step_size)`
 
-5. `append()`: a=[1,2].append([1]) -> a[1,2,[1]]
+6. `append()`: a=[1,2].append([1]) -> a[1,2,[1]]
 
    `extend()`: a=[1,2].extend([1]) -> a[1,2,1]
 
-6. `.sort(cmp=None, key=None, reverse=False)`, inplace operation, O(nlogn), keep the relative position unchanged. Uses Timsort method.
+7. `.sort(cmp=None, key=None, reverse=False)`, inplace operation, O(nlogn), keep the relative position unchanged. Uses Timsort method.
 
    `key=lambda x: (x[0],-x[1])` returns a tuple x to sort. If x[1] is int, -x[1] means to sort reversely.
 
    > Tuple is sortable in python. It will compare each element in tuple until is sorted.
 
-7. `enumerate(list)` can be used to get both the index and the value.
+8. `enumerate(list)` can be used to get both the index and the value.
 
    ```python
    dic = {val:i for i,val in enumerate(list)}
    ```
 
-8. Do not modify the list while traverse it.
+9. Do not modify the list while traverse it.
 
-9. slice operation is also left close and right open.
+10. slice operation is also left close and right open.
 
-10. Judge whether a is an empty list:
+11. Judge whether a is an empty list:
 
    ```python
    if a == []
@@ -117,7 +123,6 @@
     a[0].append(3) # b: [[1,2,3],[1],[2]]; c: [[1,2],[1],[2]]
     ```
 
-    
 
 ## String
 
