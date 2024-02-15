@@ -64,6 +64,8 @@
 
 13. `zip(a,b)` can pack two iterable objects into tuples: `[(a[0],b[0]),(a[1],b[1]),...]`. If the length of a,b are different, the returned list has the same length with the short one.
 
+14. `random.choice(l)` to select an element from l randomly.
+
 ## List
 
 
@@ -150,3 +152,5 @@
    ```
 
 4. `list(dic)` == list(dic.keys()); `list(dic.items())` == [(key,value) for key,value in dic.items()]
+
+5. For a default map, we could name it with all caps for standardized coding. `DEFAULT_MAP={xxx}`
