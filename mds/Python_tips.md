@@ -96,17 +96,19 @@
 
    > Tuple is sortable in python. It will compare each element in tuple until is sorted.
 
-8. `enumerate(list)` can be used to get both the index and the value.
+8. `sorted(iterable,cmp=None,key=None,reverse=False)`, returns a new list and can sort all iterable object.
+
+9. `enumerate(list)` can be used to get both the index and the value.
 
    ```python
    dic = {val:i for i,val in enumerate(list)}
    ```
 
-9. Do not modify the list while traverse it.
+10. Do not modify the list while traverse it.
 
-10. slice operation is also left close and right open.
+11. slice operation is also left close and right open.
 
-11. Judge whether a is an empty list:
+12. Judge whether a is an empty list:
 
    ```python
    if a == []
