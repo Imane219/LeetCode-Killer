@@ -68,8 +68,6 @@
 
 ## List
 
-
-
 1. The list in python is stored in sequence, but **each element(dp[0]) is a pointer** pointed to discrete values.
 
 2. In python, `while loop` is better to control the pointers' move. 
@@ -107,6 +105,18 @@
 10. Do not modify the list while traverse it.
 
 11. slice operation is also left close and right open.
+
+    slice operation is shallow copy, normally it make a new list to store the sliced elements (pointers to elements actually). But when `assign elements to sliced list, it will change the original list`.
+
+    ```python
+    a = [1,2,3,4,5] 
+    b = a[1:3]      # [2,3]
+    # operations on b will not change a
+    b[0] = 9        # [9,3], a=[1,2,3,4,5]
+    a[1:3] = [9]    # a=[1,9,4,5]
+    ```
+
+    
 
 12. Judge whether a is an empty list:
 
@@ -156,3 +166,26 @@
 4. `list(dic)` == list(dic.keys()); `list(dic.items())` == [(key,value) for key,value in dic.items()]
 
 5. For a default map, we could name it with all caps for standardized coding. `DEFAULT_MAP={xxx}`
+
+## Object
+
+1. We can define a `__lt__` method to make the object comparable.
+
+   ```python
+   class Node:
+       def __init__(self, val):
+           self.val = val
+       def __lt__(self, other):  # define a comparler
+           return self.val < other.val
+   ```
+
+   or we can define it outside the initialization part.
+
+   ```python
+   class Node:
+       def __init__(self, val):
+           self.val = val
+   Node.__lt__ = lambda a, b: a.val < b.val
+   ```
+
+   
