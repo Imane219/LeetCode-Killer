@@ -48,7 +48,7 @@
 
 11. In python, local functions can be defined inside a function A. Only A can call these functions if they are not returned in A. They can visit the variables outside, but can not edit them(except for sequences like list).
 
-12. If use **nonlocal/global** announcing variables that are outside local funtions, then they can be modified in the local funtions.
+12. If use **nonlocal/global** announcing variables that are outside local funtions, then they can be modified in the local funtions. If variables are not in a function, then use global.
 
     ```python
     n = 1
