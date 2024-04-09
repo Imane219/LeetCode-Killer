@@ -18,3 +18,6 @@ For the integer that has the maximum product, it should be broken down to multip
 
 So, break the integer down into $3*n$ and the remaining. If the remaining == 1, make it to $3*(n-1)+2*2$.
 
+
+
+## 求根号n，m精度

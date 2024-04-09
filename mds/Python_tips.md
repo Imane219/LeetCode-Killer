@@ -27,6 +27,8 @@
    a, b = [1,2]   # a = 1, b = 2
    a, b = b, a    # a = 2, b = 1; b,a is tuple (b,a) actually, () can be omitted
    a, *b, c = [1,2,3,4,5]   # a = 1, b = [2,3,4], c = 5
+   
+   cur.next, pre, cur = pre, cur, cur.next # will first calculate the right part, and assign sequencely to the left.
    ```
 
 9. **Chained assignment:**
@@ -65,6 +67,8 @@
 13. `zip(a,b)` can pack two iterable objects into tuples: `[(a[0],b[0]),(a[1],b[1]),...]`. If the length of a,b are different, the returned list has the same length with the short one.
 
 14. `random.choice(l)` to select an element from l randomly.
+
+15. `for i in range(l,r)`, if i traverse to the end and leave the loop, `i = r-1` not `r`.
 
 ## List
 
@@ -114,6 +118,10 @@
     # operations on b will not change a
     b[0] = 9        # [9,3], a=[1,2,3,4,5]
     a[1:3] = [9]    # a=[1,9,4,5]
+    
+    a = [[1,2],[3,4]]
+    a[:,0]   # not allowed in python, only numpy and pytorch
+    [row[0] for row in a] # ok
     ```
 
     
