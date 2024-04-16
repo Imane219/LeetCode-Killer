@@ -25,8 +25,8 @@ pre=None,cur=head 逐个反转
 仅需要改变：
 
 1. 开头递归边界return nums[l]为所求 
-
 2. 最后判断k>(n-i)表示在左边，否则右边
+3. 函数内部返回值不为空，为left或者right部分的返回值
 
 > [25. K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/)
 
@@ -172,4 +172,36 @@ f先走N步。
 
 二维dp。
 
-1.i,j范围是`[0,m][0,n]`,空串也算一个。2.更新dp从`dp[1][1]`开始，0的值由初始化给出。3.考虑滚动数组优化，需要用pre记录`[i-1][j-1]`的值，且每次更新一行需要更新dp[0]。4.x==y则无需额外编辑为最小
+1. i,j范围是`[0,m][0,n]`,空串也算一个。
+2. 更新dp从`dp[1][1]`开始，0的值由初始化给出。
+3. 考虑滚动数组优化，需要用pre记录`[i-1][j-1]`的值，且每次更新一行需要更新dp[0]。
+4. x==y则无需额外编辑为最小
+
+> [1143. 最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/)
+
+1. x==y, `dp[i-1][j-1]+1`; else, `max(dp[i-1][j],dp[i][j-1])`
+
+> [94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)
+
+**递归：**每次dfs创建一个ans数组，extend左右，append当前值，最后返回
+
+**迭代：**用栈。一开始栈空，node指向root。只要node存在就入栈并走左子树；否则pop一个记录val，node指向右子树。
+
+node即遍历的指针，根据node的指引入栈，不要自己入栈右子树。
+
+> [82. 删除排序链表中的重复元素 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/)
+
+dummy head+逐个删除，不要先确定范围再删除，这样代码比较复杂。
+
+只需一个指针p，其下一个节点代表可能要删除的节点，判断下一个和下下个值是否相等，相等则进行同值节点逐个删除；否则继续遍历。
+
+> [199. 二叉树的右视图](https://leetcode.cn/problems/binary-tree-right-side-view/)
+
+**DFS：**根右左遍历，每次遇到的第一个节点放入ans。记录层高，如果ans的长度大于等于层高，即当前层已经放入节点了，则不放入ans，继续遍历。
+
+**层序：**层序遍历，每次取一层的最后一个node放入ans
+
+> [232. 用栈实现队列](https://leetcode.cn/problems/implement-queue-using-stacks/)
+
+两个栈，一个入一个出。当需要访问队列顶端的时候，把入栈中的元素转移到出栈中，返回出栈的顶端元素。
+
