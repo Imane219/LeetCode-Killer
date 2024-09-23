@@ -34,11 +34,9 @@ pre=None,cur=head 逐个反转
 
 > [15. 三数之和](https://leetcode.cn/problems/3sum/)
 
-排序+双指针
+排序+双指针+剪枝
 
 > [1. 两数之和](https://leetcode.cn/problems/two-sum/)
-
-**One Pass：**
 
 边遍历边用哈希表记录num:i，如果当前遍历的complement在之前记录过，则找到
 
@@ -118,7 +116,7 @@ target判断是否在有序这边时，需要和两端比对判断值是否在�
 
 用top,bottom,left,right代表四个边界，`while left<=right and top<=bottom`。
 
-先无脑遍历最上和最右的一条边，接着判断`left<right and top<bottom`，再遍历下和左。最后更新四个边界。
+先无脑遍历最上和最右的一条边，接着判断`left<=right and top<=bottom`，再遍历下和左。最后更新四个边界。
 
 > [23. 合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/)
 
@@ -205,3 +203,22 @@ dummy head+逐个删除，不要先确定范围再删除，这样代码比较复
 
 两个栈，一个入一个出。当需要访问队列顶端的时候，把入栈中的元素转移到出栈中，返回出栈的顶端元素。
 
+> [148. 排序链表](https://leetcode.cn/problems/sort-list/)
+
+1. 归并排序，先递归**划分成两段链表**，对每段排序，最后两个有序链表排序。
+2. 递归边界为单个节点或者None。
+3. 快慢指针找到链表中点，将`s.next=None`。注意初始化`f=f.next`。
+4. 对两段链表分别递归，返回l和r代表排好序后的两个头节点。
+5. 合并两个有序链表，返回合并后的头节点。
+
+> [69. x 的平方根 ](https://leetcode.cn/problems/sqrtx/)
+
+二分法查找1-x//2
+
+> [718. 最长重复子数组](https://leetcode.cn/problems/maximum-length-of-repeated-subarray/)
+
+**dp,O(mn)**：用LIS的模板，如果x!=y则`dp[i][j]=0`;如果相等则长度+1
+
+**滑窗,O((m+n)*min(m,n))**：最长重复即可以尝试滑动数组，让重复的部分对齐。对于两个数组AB，用A的尾巴对齐B的头，A向右滑动，直到A的头对齐B的尾。每次滑动，都查看重复的数组中，最长对齐长度(不一定是从头开始的)。
+
+定义一个cal_len(pa,pb)函数计算每次滑动的最长数组。
