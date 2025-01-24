@@ -155,7 +155,7 @@
            a[0].append(3) # b: [[1,2,3],[1],[2]]; c: [[1,2],[1],[2]]
             ```
            
-       13. `tuple(iterable)`函数可以将可迭代对象变成元组：`tuple({a:x,b:y})=(a,b)`, `tuple([a,b,c])=(a,b,c)`
+       13. `tuple(iterable)`函数可以将可迭代对象变成元组：`tuple({a:x,b:y})=(a,b)`, `tuple([a,b,c])=(a,b,c)`，变为元组后可以直接比较。
 
        ## 字符串
 
