@@ -24,9 +24,8 @@ pre=None,cur=head 逐个反转
 
 仅需要改变：
 
-1. 开头递归边界return nums[l]为所求 
 2. 最后判断k>(n-i)表示在左边，否则右边
-3. 函数内部返回值不为空，为left或者right部分的返回值
+3. 函数内部返回值空，原地操作函数，最后输出数组位置倒数第K的元素即可
 
 > [25. K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/)
 

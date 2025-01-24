@@ -7,8 +7,10 @@ Following the problems sequence of [leetcode-master](https://github.com/youngyan
 
 ## Context
 
-1. Array
-2. Linked List
+### 中文版
+
+1. 数组
+2. 链表
 3. Hash map
 4. String
 5. Stack and Queue
